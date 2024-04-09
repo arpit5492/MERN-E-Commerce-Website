@@ -1,3 +1,5 @@
+import "./NavBar.css";
+
 const NavBar = () => {
     const selData = [
         "Men", "Women", "Kids"
