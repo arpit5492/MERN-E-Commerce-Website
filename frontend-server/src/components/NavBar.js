@@ -18,8 +18,18 @@ const NavBar = () => {
                             })}
                         </select>
                     </div>
-                    <input className='form-control ' placeholder='Search...'/>
+                    <input className='form-control' placeholder='Search...'/>
                     <button> <i className='bi bi-search'/> </button>
+                </div>
+                <div className="login-container">
+                    <i className="bi bi-person-circle user-icon my-1"></i>
+                    <h5 className="login"><a href="#">Login</a></h5> / <h5 className="register"><a href="#">Register</a></h5>
+                </div>
+                <div className="cart-wishlist">
+                    <ul className="p-0">
+                        <li className="list-icon"><a href=""><i class="bi bi-suit-heart-fill"></i></a></li>
+                        <li className="list-icon"><a href=""><i class="bi bi-cart-fill"></i></a></li>
+                    </ul>
                 </div>
             </div>
         </div>
