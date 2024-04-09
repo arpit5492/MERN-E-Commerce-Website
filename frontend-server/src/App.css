@@ -21,16 +21,18 @@ html, body {
     margin-left: 2%;
     padding: 0.8em;
     width: 23%;
+    margin-top: 0.8em;
   }
   
   .inp-container input{
     display: inline-block;
     width: 75%;
-    height: 2em;
+    height: 2.5em;
+    border: none;
   }
   .inp-container button{
     width: 10%;
-    height: 2em;
+    height: 2.5em;
     border: none;
     background-color: #dadada;
   }
@@ -39,7 +41,7 @@ html, body {
     width: 15%;
   }
   .select-btn{
-    height: 2em;
+    height: 2.5em;
     border: none;
     background-color: #dadada;
     font-weight: 600;
