@@ -1,4 +1,4 @@
-import "./NavBar.css";
+import "./_nav-bar.scss";
 
 const NavBar = () => {
     const selData = [
