@@ -1,16 +1,23 @@
 const NavBar = () => {
     return (
-        <div className="navbar navbar-light bg-dark row">
-            <div className="navFont col-lg-6">
-                <h1 className="navbar-brand text-light mx-4 py-2">Market Verse</h1>
+        <div className='header bg-dark'>
+        <div className='row'>
+          <div className='brand my-1'>
+            <h1> Market Verse </h1>
+          </div>
+          <div className='inp-container p-0 my-4 w-50 h-25 bg-white'>
+            <div className='dropdown m-0 p-0'>
+              <select className='select-btn w-100 p-0 m-0'>
+                <option> Men </option>
+                <option> Women </option>
+                <option> Kids </option>
+              </select>
             </div>
-            <div className="p-0 my-2 h-25 col-lg-6">
-                <form className="search-form" action="">
-                    <input type="search" className="form-control" placeholder="Search..."/>
-                    <button className="bi bi-search"></button>
-                </form>
-            </div>
+            <input className='form-control ' placeholder='Search...'/>
+            <button> <i className='bi bi-search'/> </button>
+          </div>
         </div>
+      </div>
     )
 }
 

@@ -1,23 +1,46 @@
-.navbar{
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.header{
+    max-width: 100%;
     box-shadow: 5px 5px 20px gray;
-}
-
-.navFont h1{
-    font-size: 1.5rem;
-}
-
-.search-form input {
+  }
+  
+  .row div{
     display: inline-block;
-    width: 60%;
-    height: 2.5em;
-    margin-left: 1.5rem;
-    margin-right: 1rem;
-}
+  }
 
-.search-form button {
-    height: 2.5em;
-    width: 4rem;
-    border-radius: 10%;
+  .brand h1{
+    font-size: 2em;
+  }
+  
+  .brand{
+    color: white;
+    margin-left: 2%;
+    padding: 0.8em;
+    width: 23%;
+  }
+  
+  .inp-container input{
+    display: inline-block;
+    width: 75%;
+    height: 2em;
+  }
+  .inp-container button{
+    width: 10%;
+    height: 2em;
     border: none;
     background-color: #dadada;
-}
+  }
+  
+  .dropdown{
+    width: 15%;
+  }
+  .select-btn{
+    height: 2em;
+    border: none;
+    background-color: #dadada;
+    font-weight: 600;
+  }
