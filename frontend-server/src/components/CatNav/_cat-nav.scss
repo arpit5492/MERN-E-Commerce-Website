@@ -1,0 +1,22 @@
+.cat-nav-container{
+    background-color: #1b1d12;
+    max-width: 100%;
+    border-top: 1px solid #444444;
+
+    .list-items{
+        list-style-type: none;
+        display: inline-block;
+        margin: 0.2em 1em;
+        padding: 0.4em;
+        height: 2.5em;
+
+
+        a{
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            height: 1.8em;
+            font-size: 1em;
+        }
+    }
+}

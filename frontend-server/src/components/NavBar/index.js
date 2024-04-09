@@ -29,8 +29,8 @@ const NavBar = () => {
                 </div>
                 <div className="cart-wishlist">
                     <ul className="p-0">
-                        <li className="list-icon"><a href=""><i class="bi bi-suit-heart-fill"></i></a></li>
-                        <li className="list-icon"><a href=""><i class="bi bi-cart-fill"></i></a></li>
+                        <li className="list-icon"><a href=""><i className="bi bi-suit-heart-fill"></i></a></li>
+                        <li className="list-icon"><a href=""><i className="bi bi-cart-fill"></i></a></li>
                     </ul>
                 </div>
             </div>
