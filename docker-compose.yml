@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  client:
+    container_name: ecommerce_client
+    restart: always
+    image: ecommerce-client-prod
+    build:
+      context: ./frontend-server
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
