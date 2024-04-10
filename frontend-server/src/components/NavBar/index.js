@@ -8,7 +8,7 @@ const NavBar = () => {
         <div className='header bg-dark'>
             <div className='row'>
                 <div className='brand'>
-                    <h3 className="">Market Verse</h3>
+                    <h3><a href="#">Market Verse</a></h3>
                 </div>
                 <div className='inp-container p-0 my-4 w-50 h-25 bg-white'>
                     <div className='dropdown m-0 p-0'>
@@ -29,8 +29,8 @@ const NavBar = () => {
                 </div>
                 <div className="cart-wishlist">
                     <ul className="p-0">
-                        <li className="list-icon"><a href=""><i className="bi bi-suit-heart-fill"></i></a></li>
-                        <li className="list-icon"><a href=""><i className="bi bi-cart-fill"></i></a></li>
+                        <li className="list-icon heart"><a href=""><i className="bi bi-suit-heart-fill"></i></a></li>
+                        <li className="list-icon cart"><a href=""><i className="bi bi-cart-fill"></i></a></li>
                     </ul>
                 </div>
             </div>

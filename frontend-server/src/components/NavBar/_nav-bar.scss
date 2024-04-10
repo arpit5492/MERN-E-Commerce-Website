@@ -20,6 +20,13 @@ $font-size: 1.3em;
     padding: 0.8em;
     width: 23%;
     margin-top: 0.8em;
+
+    h3 {
+      a{
+        text-decoration: none;
+        color: white;
+      }
+    }
   }
   
   .inp-container input{
@@ -81,7 +88,19 @@ $font-size: 1.3em;
     font-size: $font-size;
     list-style-type: none;
     display: inline-block;
-    margin-right: 0.5em;
+    margin-right: 1em;
+
+    a{
+      color: white;
+    }
+  }
+
+  .heart a:hover{
+    color: red;
+  }
+
+  .cart a:hover{
+    color: yellow;
   }
 
   .cart-wishlist{
