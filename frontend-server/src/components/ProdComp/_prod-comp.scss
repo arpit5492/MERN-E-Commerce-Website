@@ -1,6 +1,11 @@
 .prod-comp{
+  margin-top: 1em;
   img{
-    height: 250px;
-    width: 250px;
+    height: 240px;
+    width: 240px;
+  }
+  .prod {
+    border-radius: 1em;
+    box-shadow: 1px 0px 14px 0px lightgray;
   }
 }
