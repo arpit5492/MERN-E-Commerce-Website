@@ -1,7 +1,9 @@
 import "./_side-nav.scss";
+import sideNavSlice from "../../store/slices/sideNav";
+import {useSelector} from "react-redux";
 
 const SideNav = () => {
-    const items = ["Coats", "Shirts", "Boots", "Jeans"];
+    const categories = useSelector(sideNavSlice.getInitialState);
     return (
         <div className="side-nav">
             <div className="section-title">
@@ -9,26 +11,30 @@ const SideNav = () => {
             </div>
 
             <div className="accordion">
-                <div className="accordion-item individual-category">
-                    <div className="accordion-header">
-                        <button className="accordion-button" data-bs-target="#accordion-heading-one" data-bs-toggle="collapse">
-                            <div className="category-title">
-                                <a href="">Men</a>
+                {categories.map((data, index) => {
+                    return (
+                        <div key={index} className="accordion-item individual-category">
+                            <div className="accordion-header">
+                                <button className="accordion-button" data-bs-target={"#collapse"+index} data-bs-toggle="collapse">
+                                    <div className="category-title">
+                                        <a href="">{data.category}</a>
+                                    </div>
+                                </button>
                             </div>
-                        </button>
-                    </div>
-                    <div className="accordion-collapse collapse show" id="accordion-heading-one">
-                        <div className="accordion-body">
-                            <ul>
-                                {items.map((item, index) => {
-                                    return (
-                                        <li key={index} className="list-items"><a href="#">{item}</a></li>
-                                    )
-                                })}
-                            </ul>
+                            <div className="accordion-collapse collapse show" id={"collapse"+index}>
+                                <div className="accordion-body">
+                                    <ul>
+                                        {data.items.map((item, index) => {
+                                            return (
+                                                <li key={index} className="list-items"><a href="#">{item}</a></li>
+                                            )
+                                        })}
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    )
+                })}
             </div>
         </div>
     )

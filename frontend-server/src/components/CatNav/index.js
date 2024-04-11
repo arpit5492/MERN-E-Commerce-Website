@@ -1,9 +1,9 @@
 import "./_cat-nav.scss";
+import catSlice from "../../store/slices/catSlice";
+import { useSelector } from "react-redux";
 
 const CatNav = () => {
-    const data = [
-        "Men", "Women", "Kids", "Best Offers"
-    ]
+    const data = useSelector(catSlice.getInitialState);
     return (
         <>
             <div>
