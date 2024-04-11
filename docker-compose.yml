@@ -10,3 +10,12 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
+    develop:
+      watch:
+        - action: sync
+          path: ./frontend-server
+          target: /usr/src/client
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: ./frontend-server/package.json
