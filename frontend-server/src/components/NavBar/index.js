@@ -20,7 +20,7 @@ const NavBar = () => {
                             })}
                         </select>
                     </div>
-                    <input className='form-control' placeholder='Search...'/>
+                    <input placeholder='Search...'/>
                     <button> <i className='bi bi-search'/> </button>
                 </div>
                 <div className="login-container">
