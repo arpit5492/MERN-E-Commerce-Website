@@ -30,6 +30,21 @@ const initialState = [
     pName: "Jacket",
     price: 45,
     img: "https://m.media-amazon.com/images/I/81iOSL3bIfL._AC_SX679_.jpg"
+  },
+  {
+    pName: "Baby Boy Jeans",
+    price: 27.33,
+    img: "https://i.etsystatic.com/7818429/r/il/577a78/1774992767/il_1588xN.1774992767_f507.jpg"
+  },
+  {
+    pName: "Baby Girl Shorts",
+    price: 25.23,
+    img: "https://i.etsystatic.com/7818429/r/il/d797b1/2035296821/il_1588xN.2035296821_8v41.jpg"
+  },
+  {
+    pName: "Baby Girl Dress",
+    price: 5.19,
+    img: "https://i.etsystatic.com/41903190/r/il/3cfbd1/4720065558/il_1588xN.4720065558_3xqw.jpg"
   }
 ];
 
