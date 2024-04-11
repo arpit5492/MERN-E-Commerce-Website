@@ -1,5 +1,4 @@
 import "./_prod-comp.scss";
-import {useState} from "react";
 
 const ProdComp = () => {
   const prodData = [
@@ -46,6 +45,13 @@ const ProdComp = () => {
               <div className="prod-text">
                 <h5><a href="#">{item.pName}</a></h5>
                 <p> ${item.price} </p>
+                <div className="prod-rating">
+                  <a href=""><i class="bi bi-star-fill"></i></a>
+                  <a href=""><i class="bi bi-star-fill"></i></a>
+                  <a href=""><i class="bi bi-star-fill"></i></a>
+                  <a href=""><i class="bi bi-star-fill"></i></a>
+                  <a href=""><i class="bi bi-star-fill"></i></a>
+                </div>
               </div>
             </div>
           )
