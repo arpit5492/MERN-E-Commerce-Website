@@ -4,8 +4,22 @@
     height: 240px;
     width: 240px;
   }
-  .prod {
+  .prod-card {
     border-radius: 1em;
     box-shadow: 1px 0px 14px 0px lightgray;
+  }
+  .prod-text {
+    text-align: center;
+    margin-top: 1em;
+    h5 a{
+      text-decoration: none;
+      color: black;
+      font-weight: 700;
+    }
+    p{
+      margin: 0;
+      font-weight: 400;
+      font-size: 1.2em;
+    }
   }
 }
