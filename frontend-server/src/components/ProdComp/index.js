@@ -38,7 +38,7 @@ const ProdComp = () => {
       {
         prodData.map(item => {
           return (
-            <div className="mx-4 my-3 p-3 prod-card">
+            <div className="mx-4 p-3 prod-card">
               <div className="prod-img">
                 <img src={item.img} alt={item.pName} />
               </div>
