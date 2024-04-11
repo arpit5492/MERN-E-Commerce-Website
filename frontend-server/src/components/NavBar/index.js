@@ -6,7 +6,7 @@ const NavBar = () => {
     ]
     return (
         <div className='header bg-dark'>
-            <div className='row'>
+            <div className='row navBar-row'>
                 <div className='brand'>
                     <h3><a href="#">Market Verse</a></h3>
                 </div>
