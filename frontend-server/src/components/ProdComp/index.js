@@ -28,9 +28,9 @@ const ProdComp = () => {
       img: "https://m.media-amazon.com/images/I/51CFDAxtC3L._AC_SY879_.jpg"
     },
     {
-      pName: "Top",
-      price: 43.99,
-      img: "https://m.media-amazon.com/images/I/51CFDAxtC3L._AC_SY879_.jpg"
+      pName: "Jacket",
+      price: 45,
+      img: "https://m.media-amazon.com/images/I/81iOSL3bIfL._AC_SX679_.jpg"
     }
   ]
   return (
