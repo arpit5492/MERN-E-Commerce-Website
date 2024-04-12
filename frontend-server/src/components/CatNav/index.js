@@ -1,9 +1,17 @@
 import "./_cat-nav.scss";
-import catSlice from "../../Redux/Category/catSlice";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getCategories } from "../../Redux/Category/actions";
 
 const CatNav = () => {
-    const data = useSelector(catSlice.getInitialState);
+    const data = useSelector(state => state.categoryReducer.categories);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getCategories());
+    }, [dispatch]);
+
+    // console.log(data);
     return (
         <>
             <div>
