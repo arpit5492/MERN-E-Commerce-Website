@@ -1,5 +1,5 @@
 import "./_prod-comp.scss";
-import prodSlice from "../../store/slices/prodSlice";
+import prodSlice from "../../Redux/Product/prodSlice";
 import {useSelector} from "react-redux";
 
 const ProdComp = () => {

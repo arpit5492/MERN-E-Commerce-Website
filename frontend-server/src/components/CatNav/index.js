@@ -1,5 +1,5 @@
 import "./_cat-nav.scss";
-import catSlice from "../../store/slices/catSlice";
+import catSlice from "../../Redux/Category/catSlice";
 import { useSelector } from "react-redux";
 
 const CatNav = () => {

@@ -1,5 +1,5 @@
 import "./_side-nav.scss";
-import sideNavSlice from "../../store/slices/sideNav";
+import sideNavSlice from "../../Redux/SideNav/sideNavSlice";
 import {useSelector} from "react-redux";
 
 const SideNav = () => {
