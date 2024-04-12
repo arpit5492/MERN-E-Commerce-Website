@@ -1,10 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-export const getCategories = createAsyncThunk(
-  "getCategories",
-  () => {
+export const getCategories = createAsyncThunk("getCategories", () => {
     const categories = fetch("http://localhost:4000/prodCat")
       .then(res => res.json());
     return categories;
-  }
-);
+  });
