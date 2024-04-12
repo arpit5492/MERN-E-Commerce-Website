@@ -11,11 +11,20 @@ app.use(morgan("dev"));
 
 //Routes
 app.get("/", (req, res) => {
+  let tableData;
   pool.getConnection((err, connection) => {
     if(err) {
       res.status(500).send(err)
     } else {
-      res.status(200).send("Connection Established!!");
+      pool.query("select * from categories", (err, data) => {
+        if(err) {
+          tableData = err;
+          res.status(500).send(tableData);
+        } else {
+          tableData = data;
+          res.status(200).send(tableData);
+        }
+      })
     }
   })
 });
