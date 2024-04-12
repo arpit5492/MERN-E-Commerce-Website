@@ -17,9 +17,11 @@ const CatNav = () => {
             <div>
                 <ul className="cat-nav-container container">
                     {data.map((singData, index) => {
-                        return (
-                            <li key={index} className="list-items"><a href="#">{singData}</a></li>
-                        )
+                        if(singData.par_cat_id === null){
+                            return (
+                                <li key={index} className="list-items"><a href="#">{singData.category}</a></li>
+                            )
+                        }
                     })}
                 </ul>
             </div>
