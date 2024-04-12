@@ -1,6 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import dotenv from "dotenv";
+import pool from "./config/index.js";
 dotenv.config();
 const app = express();
 const port = process.env.PORT;
@@ -10,17 +11,13 @@ app.use(morgan("dev"));
 
 //Routes
 app.get("/", (req, res) => {
-  const prodData = [
-    {
-      pName: "Jackets",
-      price: 32,
-    },
-    {
-      pName: "Jeans",
-      price: 21
+  pool.getConnection((err, connection) => {
+    if(err) {
+      res.status(500).send(err)
+    } else {
+      res.status(200).send("Connection Established!!");
     }
-  ]
-  res.json(prodData);
+  })
 });
 
 app.listen(port, () => {
