@@ -13,7 +13,7 @@ const catSlice = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder
-      .addCase(getCategories.pending, (state) => {
+      .addCase(getCategories.pending, (state, action) => {
         state.status = 'Loading';
       })
       .addCase(getCategories.fulfilled, (state, action) => {
