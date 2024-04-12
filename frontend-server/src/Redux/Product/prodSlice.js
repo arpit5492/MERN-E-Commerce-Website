@@ -27,9 +27,9 @@ const initialState = [
     img: "https://m.media-amazon.com/images/I/51CFDAxtC3L._AC_SY879_.jpg"
   },
   {
-    pName: "Jacket",
-    price: 45,
-    img: "https://m.media-amazon.com/images/I/81iOSL3bIfL._AC_SX679_.jpg"
+    pName: "Kid's Jacket",
+    price: 16.97,
+    img: "https://oldnavy.gap.com/webcontent/0053/702/065/cn53702065.jpg"
   },
   {
     pName: "Baby Boy Jeans",
