@@ -33,15 +33,23 @@ const SideNav = () => {
                                 <div className="accordion-collapse collapse show" id={"collapse"+index}>
                                     <div className="accordion-body">
                                         <ul>
-                                            {categories.filter(subCat => subCat.par_cat_id === data.id).map((subCat, index) => (
-                                                <li key={index} className="list-items"><a href="#">{subCat.category}</a></li>
-                                            ))}
+                                            {
+                                                categories.map((subCat, index) => {
+                                                    if(data.id === subCat.par_cat_id) {
+                                                        return (
+                                                            <li key={index} className="list-items"><a href="#">{subCat.category}</a></li>
+                                                        )
+                                                    }
+                                                    return null;
+                                                })
+                                            }
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         )
                     }
+                    return null;
                 })}
             </div>
         </div>

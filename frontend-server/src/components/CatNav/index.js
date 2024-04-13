@@ -22,6 +22,7 @@ const CatNav = () => {
                                 <li key={index} className="list-items"><a href="#">{singData.category}</a></li>
                             )
                         }
+                        return null;
                     })}
                 </ul>
             </div>

@@ -1,5 +1,4 @@
 import "./_prod-comp.scss";
-import prodSlice from "../../Redux/Product/prodSlice";
 import {useDispatch, useSelector} from "react-redux";
 import { useEffect } from "react";
 import { getProds } from "../../Redux/Product/actions";

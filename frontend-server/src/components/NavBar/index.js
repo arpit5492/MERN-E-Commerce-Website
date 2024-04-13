@@ -26,6 +26,7 @@ const NavBar = () => {
                                         <option key={index}>{data.category}</option>
                                     )
                                 }
+                                return null;
                             })}
                         </select>
                     </div>
