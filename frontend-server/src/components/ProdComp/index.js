@@ -1,9 +1,17 @@
 import "./_prod-comp.scss";
-import prodSlice from "../../store/slices/prodSlice";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import { useEffect } from "react";
+import { getProds } from "../../Redux/Product/actions";
 
 const ProdComp = () => {
-  const prodData = useSelector(prodSlice.getInitialState);
+  const prodData = useSelector(state => state.prodReducer.prods);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProds());
+  }, [dispatch]);
+
+  // console.log(prodData);
   return (
     <div className="prod-comp">
       {
@@ -11,7 +19,7 @@ const ProdComp = () => {
           return (
             <div key={index} className="mx-4 p-3 prod-card">
               <div className="prod-img">
-                <img src={item.img} alt={item.pName} />
+                <img src={item.prod_img} alt={item.pName} />
               </div>
               <div className="prod-text">
                 <h5><a href="#">{item.pName}</a></h5>

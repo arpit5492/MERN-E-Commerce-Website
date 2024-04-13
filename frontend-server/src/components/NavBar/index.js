@@ -1,9 +1,16 @@
+import { useDispatch, useSelector } from "react-redux";
 import "./_nav-bar.scss";
+import { useEffect } from "react";
+import { getCategories } from "../../Redux/Category/actions";
 
 const NavBar = () => {
-    const selData = [
-        "Men", "Women", "Kids"
-    ]
+    const selData = useSelector(state => state.categoryReducer.categories);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getCategories());
+    }, [dispatch]);
+    
     return (
         <div className='header bg-dark'>
             <div className='row navBar-row'>
@@ -14,9 +21,12 @@ const NavBar = () => {
                     <div className='dropdown m-0 p-0'>
                         <select className='select-btn w-100 p-0 m-0'>
                             {selData.map((data, index) => {
-                                return (
-                                    <option key={index}>{data}</option>
-                                )
+                                if(data.par_cat_id === null){
+                                    return (
+                                        <option key={index}>{data.category}</option>
+                                    )
+                                }
+                                return null;
                             })}
                         </select>
                     </div>
