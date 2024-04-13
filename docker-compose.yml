@@ -1,6 +1,57 @@
 version: '3.8'
 
 services:
+  db:
+    container_name: mysql_container
+    image: mysql:latest
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=${ROOT_PASSWORD}
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${ROOT_PASSWORD}
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    container_name: phpmyadmin_container
+    image: phpmyadmin
+    restart: always
+    environment:
+      - PMA_HOST=${PMA_HOST}
+      - MYSQL_ROOT_PASSWORD=${ROOT_PASSWORD}
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    volumes:
+      - ./phpmyadmin_sessions:/sessions
+
+  api:
+    container_name: ecommerce_api
+    restart: always
+    image: ecommerce_api-prod
+    build: 
+      context: ./backend-server
+      dockerfile: Dockerfile
+    env_file:
+      - ./backend-server/.env
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+    develop:
+      watch:
+        - action: sync
+          path: ./backend-server
+          target: /usr/src/api
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: ./backend-server/package.json
+    
   client:
     container_name: ecommerce_client
     restart: always
@@ -10,6 +61,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
+    depends_on:
+      - api
     develop:
       watch:
         - action: sync
