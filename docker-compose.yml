@@ -1,6 +1,36 @@
 version: '3.8'
 
 services:
+  db:
+    container_name: mysql_container
+    image: mysql:latest
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD = ROOT_PASSWORD
+      - MYSQL_DATABASE = DB_NAME
+      - MYSQL_USER = DB_USER
+      - MYSQL_PASSWORD = DB_PASSWORD
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    container_name: phpmyadmin_container
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    environment:
+      - MYSQL_HOST = localhost
+      - MYSQL_USER = root
+      - MYSQL_PASS = password
+      - MYSQL_DB = marketVerse
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    volumes:
+      - ./phpmyadmin_sessions:/sessions
+
   api:
     container_name: ecommerce_api
     restart: always
@@ -12,6 +42,8 @@ services:
       - ./backend-server/.env
     ports:
       - "4000:4000"
+    depends_on:
+      - db
     develop:
       watch:
         - action: sync
