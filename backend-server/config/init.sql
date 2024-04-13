@@ -1,7 +1,7 @@
 create table categories(
-  id int auto_increment primary key not null,
-  category varchar(50) not null,
-  par_cat_id int not null,
+  id int auto_increment primary key,
+  category varchar(50),
+  par_cat_id int,
   created_on timestamp default now()
 );
 

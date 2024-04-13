@@ -6,10 +6,10 @@ services:
     image: mysql:latest
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD = ROOT_PASSWORD
-      - MYSQL_DATABASE = DB_NAME
-      - MYSQL_USER = DB_USER
-      - MYSQL_PASSWORD = DB_PASSWORD
+      - MYSQL_ROOT_PASSWORD=${ROOT_PASSWORD}
+      - MYSQL_DATABASE=${DB_NAME}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${ROOT_PASSWORD}
     ports:
       - "3308:3306"
     volumes:
@@ -17,13 +17,11 @@ services:
 
   phpmyadmin:
     container_name: phpmyadmin_container
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin
     restart: always
     environment:
-      - MYSQL_HOST = localhost
-      - MYSQL_USER = root
-      - MYSQL_PASS = password
-      - MYSQL_DB = marketVerse
+      - PMA_HOST=${PMA_HOST}
+      - MYSQL_ROOT_PASSWORD=${ROOT_PASSWORD}
     ports:
       - "8080:80"
     depends_on:

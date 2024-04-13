@@ -11,7 +11,7 @@ prodCat.get("/", (req, res) => {
         res.status(500).send(tableData);
       } else {
         tableData = data;
-        res.status(200).send(tableData);
+        res.status(200).json(tableData);
       }
     });
   });
