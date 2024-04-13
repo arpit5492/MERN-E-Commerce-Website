@@ -1,15 +1,30 @@
 import "./_side-nav.scss";
 import {useDispatch, useSelector} from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getCategories } from "../../Redux/Category/actions";
+import { filterProds } from "../../Redux/Product/prodSlice";
 
 const SideNav = () => {
     const categories = useSelector(state => state.categoryReducer.categories);
+    const fetchProdData = useSelector(state => state.prodReducer);
+    const [products, setProds] = useState();
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getCategories());
     }, [dispatch]);
+
+    useEffect(() => {
+        setProds(fetchProdData.prods);
+    }, [fetchProdData.status]);
+
+    const filterData = (itemData) => {
+        // console.log(products);
+        // console.log(itemData);
+        const payload = {itemData, products}
+        // console.log(payload);
+        dispatch(filterProds(payload));
+    }
 
     // console.log(categories);
     return (
@@ -37,7 +52,9 @@ const SideNav = () => {
                                                 categories.map((subCat, index) => {
                                                     if(data.id === subCat.par_cat_id) {
                                                         return (
-                                                            <li key={index} className="list-items"><a href="#">{subCat.category}</a></li>
+                                                            <li key={index} className="list-items">
+                                                                <a href="#" onClick={() => filterData(subCat)}>{subCat.category}</a>
+                                                            </li>
                                                         )
                                                     }
                                                     return null;
