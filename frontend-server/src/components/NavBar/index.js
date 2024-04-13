@@ -5,6 +5,7 @@ import { getCategories } from "../../Redux/Category/actions";
 
 const NavBar = () => {
     const selData = useSelector(state => state.categoryReducer.categories);
+    const totItems = useSelector(state => state.cr.totalItems);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -40,7 +41,16 @@ const NavBar = () => {
                 <div className="cart-wishlist">
                     <ul className="p-0">
                         <li className="list-icon heart"><a href=""><i className="bi bi-suit-heart-fill"></i></a></li>
-                        <li className="list-icon cart"><a href=""><i className="bi bi-cart-fill"></i></a></li>
+                        <li className="list-icon cart"><a href=""><i className="bi bi-cart-fill"/></a>
+                            {
+                                (totItems!==0) ?
+                                    <div id="cart-item-count">
+                                        <p>{totItems}</p>
+                                    </div>
+                                :
+                                    <></>
+                            }
+                        </li>
                     </ul>
                 </div>
             </div>
