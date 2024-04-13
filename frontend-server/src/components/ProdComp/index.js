@@ -20,7 +20,7 @@ const ProdComp = () => {
     dispatch(addCartItem(itemData));
   }
 
-  console.log(cart);
+  // console.log(cart);
 
   // console.log(prodData);
   return (

@@ -1,5 +1,5 @@
 $ele-height: 2.5em;
-$font-size: 1.3em;
+$font-size: 1.2em;
 
 .header{
     max-width: 100%;
@@ -90,6 +90,24 @@ $font-size: 1.3em;
     display: inline-block;
     margin-right: 1em;
 
+    #cart-item-count {
+      border-radius: 50%;
+      background-color: gold;
+      position: absolute;
+      height: 1em;
+      width: 1em;
+      left: 95.5%;
+      top: 3%;
+      text-align: center;
+      line-height: 90%;
+
+      p {
+        font-size: 0.7em;
+        font-weight: 600;
+        color: black;
+      }
+    }
+
     a{
       color: white;
     }
@@ -100,7 +118,7 @@ $font-size: 1.3em;
   }
 
   .cart a:hover{
-    color: yellow;
+    color: gold;
   }
 
   .cart-wishlist{
