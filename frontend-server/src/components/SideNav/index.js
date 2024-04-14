@@ -2,14 +2,14 @@ import "./_side-nav.scss";
 import {useDispatch, useSelector} from "react-redux";
 import { useEffect, useState } from "react";
 import { getCategories } from "../../Redux/Category/actions";
-import { filterProds } from "../../Redux/Product/prodSlice";
+import { filterByPrice, filterProds } from "../../Redux/Product/prodSlice";
 
 const SideNav = () => {
     const categories = useSelector(state => state.categoryReducer.categories);
     const fetchProdData = useSelector(state => state.prodReducer);
     const [products, setProds] = useState();
     const [filterPrice, setFilterPrice] = useState({
-        minPrice: 2,
+        minPrice: 1,
         maxPrice: 130
     });
     const dispatch = useDispatch();
@@ -29,6 +29,30 @@ const SideNav = () => {
         // console.log(payload);
         dispatch(filterProds(payload));
     }
+
+    const priceFilterHandler = (e, flag) => {
+        if(flag === "min") {
+            // console.log(e.target.value);
+            setFilterPrice(prevValue => {
+                return (
+                    {...prevValue, minPrice: e.target.value}
+                )
+            })
+        } else if(flag === "max") {
+            // console.log(e.target.value);
+            setFilterPrice(prevValue => {
+                return (
+                    {...prevValue, maxPrice: e.target.value}
+                )
+            })
+        }
+    }
+
+    const applyPriceFilter = () => {
+        const payload = {products, filterPrice}
+        // console.log(payload);
+        dispatch(filterByPrice(payload));
+    }   
 
     // console.log(categories);
     return (
@@ -84,6 +108,7 @@ const SideNav = () => {
                         min={2}
                         max={130}
                         step={10}
+                        onChange={(e) => priceFilterHandler(e, "min")}
                     />
                 </div>
                 <div>
@@ -93,9 +118,10 @@ const SideNav = () => {
                         min={2}
                         max={130}
                         step={10}
+                        onChange={(e) => priceFilterHandler(e, "max")}
                     />
                 </div>
-                <button className="btn btn-outline-dark my-3">Apply filter</button>
+                <button onClick={applyPriceFilter} className="btn btn-outline-dark my-3">Apply filter</button>
             </div>
         </div>
     )
