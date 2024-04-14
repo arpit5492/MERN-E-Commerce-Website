@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import { useEffect } from "react";
 import { getProds } from "../../Redux/Product/actions";
 import { addCartItem } from "../../Redux/Cart/cartSlice";
+import { Link } from "react-router-dom";
 
 const ProdComp = () => {
   const prodData = useSelector(state => state.prodReducer.prods);
@@ -33,7 +34,7 @@ const ProdComp = () => {
                 <img src={item.prod_img} alt={item.pName} />
               </div>
               <div className="prod-text">
-                <h5><a href="#">{item.pName}</a></h5>
+                <h5><Link to="/prodDet">{item.pName}</Link></h5>
                 <p> ${item.price} </p>
                 <div className="prod-rating">
                   <a href=""><i className="bi bi-star-fill"></i></a>
