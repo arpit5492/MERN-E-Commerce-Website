@@ -1,16 +1,27 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./_filled-cart.scss";
+import { updateItemQuantity } from "../../../Redux/Cart/cartSlice";
 
 const FilledCart = () => {
   const cart = useSelector(state => state.cr);
+  const dispatch = useDispatch();
   // console.log(cart.cartItems);
   const cartData = cart.cartItems;
+
+  const quantityHandler = (e, item, index) => {
+    const payload = {
+      operator: e.target.innerText,
+      item,
+      index
+    }
+    dispatch(updateItemQuantity(payload));
+  }
   return (
     <div>
       <div className="row my-5 fc-main-div">
         <div className="col-8 p-4">
           {
-            cartData.map((item) => {
+            cartData.map((item, index) => {
               return (
                 <div>
                   <div className="row cart-item-card">
@@ -32,7 +43,7 @@ const FilledCart = () => {
                         </div>
                         <hr />
                         <div className="cart-edit-container">
-                          <div className="btn-group mx-3">
+                          <div className="btn-group mx-3" onClick={(e) => quantityHandler(e, item, index)}>
                             <div className="btn btn-outline-dark">
                               <span> - </span>
                             </div>

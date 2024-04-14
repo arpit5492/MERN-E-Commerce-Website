@@ -22,9 +22,26 @@ const cartSlice = createSlice({
       }
 
       // console.log(state.cartItems);
+    },
+    updateItemQuantity: (state, action) => {
+      // console.log(action.payload);
+      let index = action.payload.index;
+      if(action.payload.operator === "+") {
+        ++ state.cartItems[index].quantity;
+        state.totalItemsPrice += action.payload.item.price;
+        ++ state.totalQuantity;
+        state.totalItemsPrice = parseFloat(state.totalItemsPrice.toFixed(2));
+      } else {
+        if(state.cartItems[index].quantity > 1) {
+          -- state.cartItems[index].quantity;
+          state.totalItemsPrice -= action.payload.item.price;
+          -- state.totalQuantity;
+          state.totalItemsPrice = parseFloat(state.totalItemsPrice.toFixed(2));
+        }
+      }
     }
   }
 });
 
-export const {addCartItem} = cartSlice.actions;
+export const {addCartItem, updateItemQuantity} = cartSlice.actions;
 export default cartSlice.reducer;
