@@ -30,11 +30,13 @@ const ProdComp = () => {
         prodData.map((item, index) => {
           return (
             <div key={index} className="mx-4 p-3 prod-card">
-              <div className="prod-img">
-                <img src={item.prod_img} alt={item.pName} />
-              </div>
+              <Link to="/prodDet" state={item}>
+                <div className="prod-img">
+                  <img src={item.prod_img} alt={item.pName} />
+                </div>
+              </Link>
               <div className="prod-text">
-                <h5><Link to="/prodDet">{item.pName}</Link></h5>
+                <h5><Link to="/prodDet" state={item}>{item.pName}</Link></h5>
                 <p> ${item.price} </p>
                 <div className="prod-rating">
                   <a href=""><i className="bi bi-star-fill"></i></a>
