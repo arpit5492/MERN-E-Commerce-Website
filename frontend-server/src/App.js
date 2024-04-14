@@ -3,6 +3,7 @@ import CatNav from './components/CatNav';
 import NavBar from "./components/NavBar";
 import MainComp from './components/MainComp';
 import { Routes, Route } from 'react-router-dom';
+import ProdDetails from './components/ProdDetails';
 
 function App() {
   return (
@@ -10,7 +11,10 @@ function App() {
       <NavBar />
       <CatNav />
       <Routes>
-        <Route path='/' element={<MainComp/>}/>
+        <Route path='/'>
+          <Route index element={<MainComp/>}/>
+          <Route path='/prodDet/:id' element={<ProdDetails/>}/>
+        </Route>
       </Routes>
     </div>
   );
