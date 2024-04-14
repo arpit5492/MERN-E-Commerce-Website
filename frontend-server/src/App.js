@@ -11,8 +11,10 @@ function App() {
       <NavBar />
       <CatNav />
       <Routes>
-        <Route path='/' element={<MainComp/>}/>
-        <Route path='/prodDet' element={<ProdDetails/>}/>
+        <Route path='/'>
+          <Route index element={<MainComp/>}/>
+          <Route path='/prodDet/:id' element={<ProdDetails/>}/>
+        </Route>
       </Routes>
     </div>
   );

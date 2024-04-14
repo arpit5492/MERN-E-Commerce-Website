@@ -14,7 +14,7 @@ const ProdDetails = () => {
         <div>
           <span>{data.pName}</span>
 
-          <div>
+          <div className="prod-rating">
             <a href=""><i className="bi bi-star-fill"></i></a>
             <a href=""><i className="bi bi-star-fill"></i></a>
             <a href=""><i className="bi bi-star-fill"></i></a>
@@ -27,6 +27,17 @@ const ProdDetails = () => {
           </div>
           <div>
             <span>Product Description</span>
+          </div>
+
+          <div>
+            <div>
+              <div>
+                <i className="bi bi-cart-fill" />
+              </div>
+              <div>
+                <p>Add to Cart</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
