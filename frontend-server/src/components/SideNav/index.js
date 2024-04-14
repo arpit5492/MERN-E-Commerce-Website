@@ -2,12 +2,16 @@ import "./_side-nav.scss";
 import {useDispatch, useSelector} from "react-redux";
 import { useEffect, useState } from "react";
 import { getCategories } from "../../Redux/Category/actions";
-import { filterProds } from "../../Redux/Product/prodSlice";
+import { filterByPrice, filterProds } from "../../Redux/Product/prodSlice";
 
 const SideNav = () => {
     const categories = useSelector(state => state.categoryReducer.categories);
     const fetchProdData = useSelector(state => state.prodReducer);
     const [products, setProds] = useState();
+    const [filterPrice, setFilterPrice] = useState({
+        minPrice: 1,
+        maxPrice: 130
+    });
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -26,6 +30,30 @@ const SideNav = () => {
         dispatch(filterProds(payload));
     }
 
+    const priceFilterHandler = (e, flag) => {
+        if(flag === "min") {
+            // console.log(e.target.value);
+            setFilterPrice(prevValue => {
+                return (
+                    {...prevValue, minPrice: e.target.value}
+                )
+            })
+        } else if(flag === "max") {
+            // console.log(e.target.value);
+            setFilterPrice(prevValue => {
+                return (
+                    {...prevValue, maxPrice: e.target.value}
+                )
+            })
+        }
+    }
+
+    const applyPriceFilter = () => {
+        const payload = {products, filterPrice}
+        // console.log(payload);
+        dispatch(filterByPrice(payload));
+    }   
+
     // console.log(categories);
     return (
         <div className="side-nav">
@@ -33,7 +61,7 @@ const SideNav = () => {
                 <h3>Category</h3>
             </div>
 
-            <div className="accordion">
+            <div className="accordion my-3">
                 {categories.map((data, index) => {
                     if(data.par_cat_id === null) {
                         return (
@@ -68,6 +96,32 @@ const SideNav = () => {
                     }
                     return null;
                 })}
+            </div>
+            <div className="price-filter-container">
+                <div className="section-title">
+                    <h3>Filter By Price</h3>
+                </div>
+                <div>
+                    <label> Min: {filterPrice.minPrice}</label>
+                    <input type="range" 
+                        className="form-range"
+                        min={2}
+                        max={130}
+                        step={10}
+                        onChange={(e) => priceFilterHandler(e, "min")}
+                    />
+                </div>
+                <div>
+                    <label> Max: {filterPrice.maxPrice}</label>
+                    <input type="range"
+                        className="form-range" 
+                        min={2}
+                        max={130}
+                        step={10}
+                        onChange={(e) => priceFilterHandler(e, "max")}
+                    />
+                </div>
+                <button onClick={applyPriceFilter} className="btn btn-outline-dark my-3">Apply filter</button>
             </div>
         </div>
     )
