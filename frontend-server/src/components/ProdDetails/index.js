@@ -6,13 +6,13 @@ const ProdDetails = () => {
   // console.log(location.state);
   const data = location.state;
   return (
-    <div className="prodDet">
-      <div>
-        <div>
+    <div className="">
+      <div className="row container my-5 prodDet-container">
+        <div className="col-5 prod-image-container">
           <img src={data.prod_img} alt={data.pName} />
         </div>
-        <div>
-          <span>{data.pName}</span>
+        <div className="col-7 prod-info">
+          <span id="prod-name">{data.pName}</span>
 
           <div className="prod-rating">
             <a href=""><i className="bi bi-star-fill"></i></a>
@@ -21,20 +21,21 @@ const ProdDetails = () => {
             <a href=""><i className="bi bi-star-fill"></i></a>
             <a href=""><i className="bi bi-star-fill"></i></a>
           </div>
-          <div>
-            Price: <span>${data.price}</span>
-            <div>Inclusive of all taxes</div>
+          <hr />
+          <div className="prod-price">
+            Price: <span className="price-text">${data.price}</span>
+            <div style={{fontSize: "0.8em"}}>Inclusive of all taxes</div>
           </div>
-          <div>
+          <div className="my-3 prod-desc">
             <span>Product Description</span>
           </div>
 
-          <div>
-            <div>
-              <div>
+          <div className="my-5">
+            <div className="btn btn-warning cart-button">
+              <div className="cart-icon">
                 <i className="bi bi-cart-fill" />
               </div>
-              <div>
+              <div className="cart-text">
                 <p>Add to Cart</p>
               </div>
             </div>

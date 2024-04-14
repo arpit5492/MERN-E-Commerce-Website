@@ -9,7 +9,7 @@ const SideNav = () => {
     const fetchProdData = useSelector(state => state.prodReducer);
     const [products, setProds] = useState();
     const [filterPrice, setFilterPrice] = useState({
-        minPrice: 1,
+        minPrice: 10,
         maxPrice: 130
     });
     const dispatch = useDispatch();
