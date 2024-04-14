@@ -39,11 +39,11 @@ const ProdComp = () => {
                 <h5><Link to={`/prodDet/${item.id}`} state={item}>{item.pName}</Link></h5>
                 <p> ${item.price} </p>
                 <div className="prod-rating">
-                  <a href=""><i className="bi bi-star-fill"></i></a>
-                  <a href=""><i className="bi bi-star-fill"></i></a>
-                  <a href=""><i className="bi bi-star-fill"></i></a>
-                  <a href=""><i className="bi bi-star-fill"></i></a>
-                  <a href=""><i className="bi bi-star-fill"></i></a>
+                  <Link to="/"><i className="bi bi-star-fill"></i></Link>
+                  <Link to="/"><i className="bi bi-star-fill"></i></Link>
+                  <Link to="/"><i className="bi bi-star-fill"></i></Link>
+                  <Link to="/"><i className="bi bi-star-fill"></i></Link>
+                  <Link to="/"><i className="bi bi-star-fill"></i></Link>
                 </div>
               </div>
               <div className="my-2" onClick={() => addToCart(item)}>

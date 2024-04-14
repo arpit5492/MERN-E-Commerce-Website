@@ -70,7 +70,7 @@ const SideNav = () => {
                                 <div className="accordion-header">
                                     <button className="accordion-button" data-bs-target={"#collapse"+index} data-bs-toggle="collapse">
                                         <div className="category-title">
-                                            <a href="">{data.category}</a>
+                                            <Link to="/">{data.category}</Link>
                                         </div>
                                     </button>
                                 </div>

@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./_prod-details.scss";
 import { useDispatch } from "react-redux";
 import { addCartItem } from "../../Redux/Cart/cartSlice";

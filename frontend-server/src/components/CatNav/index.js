@@ -21,7 +21,7 @@ const CatNav = () => {
                     {data.map((singData, index) => {
                         if(singData.par_cat_id === null){
                             return (
-                                <li key={index} className="list-items"><a href="#">{singData.category}</a></li>
+                                <li key={index} className="list-items"><Link to="/">{singData.category}</Link></li>
                             )
                         }
                         return null;
