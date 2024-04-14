@@ -42,16 +42,18 @@ const NavBar = () => {
                 <div className="cart-wishlist">
                     <ul className="p-0">
                         <li className="list-icon heart"><a href=""><i className="bi bi-suit-heart-fill"></i></a></li>
-                        <li className="list-icon cart"><a href=""><i className="bi bi-cart-fill"/></a>
-                            {
-                                (totItems!==0) ?
-                                    <div id="cart-item-count">
-                                        <p>{totItems}</p>
-                                    </div>
-                                :
-                                    <></>
-                            }
-                        </li>
+                        <Link to="/cart">
+                            <li className="list-icon cart"><a href=""><i className="bi bi-cart-fill"/></a>
+                                {
+                                    (totItems!==0) ?
+                                        <div id="cart-item-count">
+                                            <p>{totItems}</p>
+                                        </div>
+                                    :
+                                        <></>
+                                }
+                            </li>
+                        </Link>
                     </ul>
                 </div>
             </div>
