@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "./_nav-bar.scss";
 import { useEffect } from "react";
 import { getCategories } from "../../Redux/Category/actions";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
     const selData = useSelector(state => state.categoryReducer.categories);
@@ -16,7 +17,7 @@ const NavBar = () => {
         <div className='header bg-dark'>
             <div className='row navBar-row'>
                 <div className='brand'>
-                    <h3><a href="#">Market Verse</a></h3>
+                    <h3><Link to="/">Market Verse</Link></h3>
                 </div>
                 <div className='inp-container p-0 my-4 w-50 h-25 bg-white'>
                     <div className='dropdown m-0 p-0'>
