@@ -37,7 +37,7 @@ const FilledCart = () => {
                               <span> - </span>
                             </div>
                             <div className="btn">
-                              0
+                              {item.quantity}
                             </div>
                             <div className="btn btn-outline-dark">
                               <span> + </span>

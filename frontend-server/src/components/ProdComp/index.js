@@ -17,8 +17,9 @@ const ProdComp = () => {
   // console.log(cart);
 
   const addToCart = (itemData) => {
+    const payload = {...itemData, quantity:1}
     // console.log(itemData);
-    dispatch(addCartItem(itemData));
+    dispatch(addCartItem(payload));
   }
 
   // console.log(cart);
