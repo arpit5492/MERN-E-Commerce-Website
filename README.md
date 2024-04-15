@@ -26,29 +26,35 @@ These instructions will get you a copy of the project up and running on your loc
 
 2. **Clone the repository**:
 
-```
-git clone https://github.com/arpit5492/MERN-ECommerce-Website.git
-```
+  ```
+  git clone https://github.com/arpit5492/MERN-ECommerce-Website.git
+  ```
 
 3. **Navigate to the application directory**:
 
-```
-cd MERN-ECommerce-Website/
-```
+  ```
+  cd MERN-ECommerce-Website/
+  ```
 
 4. **Build the Docker images**:
 
-```
-docker-compose build
-```
+  ```
+  docker-compose build
+  ```
 
 5. **Run the Docker containers**:
 
-```
-docker-compose up
-```
+  ```
+  docker-compose up
+  ```
 
-6. **Access the application**:
+6. **Watch for code changes**:
+- The `docker-compose.yml` file includes configuration to watch for any changes in the code. This allows you to see changes reflected immediately in the web application. You can activate this feature by running:
+  ```
+  docker-compose watch
+  ```
+
+7. **Access the application**:
 - Open your browser and visit `http://localhost:3000` to view the app.
 - Administer the database via phpMyAdmin at `http://localhost:8080`.
 
