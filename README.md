@@ -53,5 +53,37 @@ docker-compose up
 
 1. **Clone the repository**:
 
+2. **Run the Backend Server**:
+- Navigate to the backend server directory:
+  ```
+  cd backend-server/
+  ```
+- Start the backend server:
+  ```
+  nodemon index.js
+  ```
+
+3. **Run the Frontend Server**:
+- Open a new terminal and navigate to the frontend server directory:
+  ```
+  cd frontend-server/
+  ```
+- Start the frontend server:
+  ```
+  npm start
+  ```
+
+4. **Access the application**:
+- Open your browser and visit `http://localhost:3000` to view the app.
+
+## Screenshots
+
+*Include screenshots of your application here*
+
+## Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+
 
 
