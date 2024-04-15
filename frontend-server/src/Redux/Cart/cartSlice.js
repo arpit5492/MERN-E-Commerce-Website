@@ -45,6 +45,11 @@ const cartSlice = createSlice({
         return elem.id != action.payload.id;
       });
       state.cartItems = filteredCart;
+
+      state.totalItemsPrice -= (action.payload.price * action.payload.quantity);
+      state.totalQuantity -= action.payload.quantity;
+      -- state.totalItems;
+      state.totalItemsPrice = parseFloat(state.totalItemsPrice.toFixed(2));
     }
   }
 });
