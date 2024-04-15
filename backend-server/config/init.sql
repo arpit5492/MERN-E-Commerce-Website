@@ -74,4 +74,19 @@ insert into products (
     8,
     "https://i5.walmartimages.com/seo/Ladies-Athletic-Shorts_759c6a11-a58d-4ada-9dc2-e9af00e39de1.7434ef624579b47034170ce38eeac83b.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF",
     35.99
-);
+), (
+    "Women Sandals",
+    7,
+    "https://i5.walmartimages.com/seo/Sandals-Women-High-Heeled-Thick-Heeled-Open-Toe-with-Square-Head-Shoes_108a479f-5dfa-45f7-8aeb-0f4bd86b202e.f1cd694311f95a1be2dbf98c241f48fa.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF",
+    24.99
+), (
+    "Women High Heel",
+    7,
+    "https://i5.walmartimages.com/asr/715f490b-0f47-4551-a2e8-3c9149418a7b.5caa798ea026fe201da244647d524f04.png?odnHeight=640&odnWidth=640&odnBg=FFFFFF",
+    36.99
+), (
+    "Mini Dress",
+    6,
+    "https://m.media-amazon.com/images/I/71C-WcX+KXL._AC_SY879_.jpg",
+    34.99
+)
