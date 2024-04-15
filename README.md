@@ -1,4 +1,4 @@
-# Market Verse
+# Full Stack E-Commerce Website
 
 Welcome to Market Verse, an e-commerce platform where users can register, log in, view products, add products to the cart, and filter products by categories and price. This application uses MySQL for the database, Node.js and Express.js for the backend API, and React.js with Bootstrap for the frontend.
 
