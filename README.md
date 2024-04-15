@@ -2,6 +2,9 @@
 
 Welcome to Market Verse, an e-commerce platform where users can register, log in, view products, add products to the cart, and filter products by categories and price. This application uses MySQL for the database, Node.js and Express.js for the backend API, and React.js with Bootstrap for the frontend.
 
+## Screenshot
+<img width="1432" alt="Screenshot 2024-04-15 at 12 58 09 PM" src="https://github.com/arpit5492/MERN-ECommerce-Website/assets/48523103/bece8543-5cd8-4f39-81be-acf61e63b9b2">
+
 ## Technologies
 - **Frontend:** React.js, Bootstrap
 - **Backend:** Node.js, Express.js
@@ -75,10 +78,6 @@ docker-compose up
 
 4. **Access the application**:
 - Open your browser and visit `http://localhost:3000` to view the app.
-
-## Screenshots
-
-*Include screenshots of your application here*
 
 ## Contributing
 
