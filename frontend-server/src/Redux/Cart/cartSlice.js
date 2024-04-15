@@ -39,9 +39,15 @@ const cartSlice = createSlice({
           state.totalItemsPrice = parseFloat(state.totalItemsPrice.toFixed(2));
         }
       }
+    },
+    deleteCartItem: (state, action) => {
+      let filteredCart = state.cartItems.filter((elem) => {
+        return elem.id != action.payload.id;
+      });
+      state.cartItems = filteredCart;
     }
   }
 });
 
-export const {addCartItem, updateItemQuantity} = cartSlice.actions;
+export const {addCartItem, updateItemQuantity, deleteCartItem} = cartSlice.actions;
 export default cartSlice.reducer;
