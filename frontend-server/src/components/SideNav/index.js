@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import { useEffect, useState } from "react";
 import { getCategories } from "../../Redux/Category/actions";
 import { filterByPrice, filterProds } from "../../Redux/Product/prodSlice";
+import { Link } from "react-router-dom";
 
 const SideNav = () => {
     const categories = useSelector(state => state.categoryReducer.categories);
@@ -69,7 +70,7 @@ const SideNav = () => {
                                 <div className="accordion-header">
                                     <button className="accordion-button" data-bs-target={"#collapse"+index} data-bs-toggle="collapse">
                                         <div className="category-title">
-                                            <a href="">{data.category}</a>
+                                            <Link to="/">{data.category}</Link>
                                         </div>
                                     </button>
                                 </div>
@@ -81,7 +82,7 @@ const SideNav = () => {
                                                     if(data.id === subCat.par_cat_id) {
                                                         return (
                                                             <li key={index} className="list-items">
-                                                                <a href="#" onClick={() => filterData(subCat)}>{subCat.category}</a>
+                                                                <Link to="/" onClick={() => filterData(subCat)}>{subCat.category}</Link>
                                                             </li>
                                                         )
                                                     }

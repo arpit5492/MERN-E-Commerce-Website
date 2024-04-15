@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./_prod-details.scss";
 import { useDispatch } from "react-redux";
 import { addCartItem } from "../../Redux/Cart/cartSlice";
@@ -16,7 +16,7 @@ const ProdDetails = () => {
     <div className="">
       <div className="row container my-5 prodDet-container">
         <div className="col-5 prod-image-container">
-          <img src={data.prod_img} alt={data.pName} />
+          <img className="shadow-lg" src={data.prod_img} alt={data.pName} />
         </div>
         <div className="col-7 prod-info">
           <span id="prod-name">{data.pName}</span>
